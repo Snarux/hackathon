@@ -59,8 +59,15 @@ $(document).ready(function () {
         });
     };
     
+    	$.getJSON("js/products.json", function(json) {
+		console.log(json); // this will show the info it in firebug console
+	});
+    
+    
     makeTable();
     function makeTable() {
+
+	    
         //reset table
         $("#table tr").remove();
 
