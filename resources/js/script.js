@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // Below function Executes on click of login button.
-    var users = [{ "name": "admin", "password":"admin"}, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
+    var users = [{ "name": "admin", "password": "admin" }, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
     var attempt = 3; // Variable to count number of attempts.
     $("#submit").on("click", function () {
         var username = document.getElementById("inputEmail").value;
@@ -9,14 +9,14 @@ $(document).ready(function () {
 
         Object.entries(users).forEach(usr => {
 
-            if(username == usr[1].name){
+            if (username == usr[1].name) {
 
                 if (password == usr[1].password) {
                     alert("Login successfully");
                     window.location = "success.html"; // Redirecting to other page.
                     return false;
                 }
-                
+
                 else {
                     attempt--;// Decrementing by one.
                     alert("You have left " + attempt + " attempt;");
@@ -58,67 +58,43 @@ $(document).ready(function () {
             }
         });
     };
-    
+
     makeTable();
     function makeTable() {
         //reset table
-        $("#table tr").remove();
+        $("#products .card").remove();
 
         //ajax
         function successCallback(incomingData) {
 
-            //header 
-            $('#table').append("<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Edit</th><th>Delete</th></tr>");
-
-            //populate
-            var id = '';
+        //populate
             for (i = 0; i < incomingData.length; i++) {
-
-                var row = table.insertRow(-1);
-
+                
                 Object.entries(incomingData[i]).forEach(entry => {
-
-                    //Store ID
-                    if (entry[0] == 'id') {
-                        id = entry[1];
-                    }
-
-                    var cell = row.insertCell();
-                    cell.innerHTML = entry[1];
+                    $('#products').append('<div class="card"><p class="card-toy-category">Category</p><img class="img-fluid card-img-top" src="" alt="Card image cap"><div class="card-body"><p class="card-toy-name">Name</p><p class="card-toy-type">Type</p></div></div>');
                 });
-
-                var cell = row.insertCell();
-                cell.innerHTML = '<button type="button" data-d="' + id + '" class="btn btn-success editme">Edit</button>';
-                var cell = row.insertCell();
-                cell.innerHTML = '<button type="button" data-id="' + id + '" class="btn btn-danger deleteme">Delete</button>';
-
             }
-
-            // make delete/edit buttons clickable
-            deletebuttonsOnTable();
-            editbuttonsOnTable();
-
         };
+    };
 
-        function errorCallback(request, status, error) {
-            // do something with the error
-            console.log("fail");
-        }
-
-        // perform an ajax http get request
-        $.ajax({
-            url: 'http://localhost:8080/javabank5/api/customer',
-            async: true,
-            contentType: 'application/json',
-            success: successCallback,
-            error: errorCallback
-        });
-
-        var table = document.getElementById("table"); //Change Me
+    function errorCallback(request, status, error) {
+        // do something with the error
+        console.log("something wrong");
     }
-});
 
-    /*var owl = $('.owl-carousel');
+    // perform an ajax http get request
+    $.ajax({
+        url: 'products',
+        async: true,
+        contentType: 'application/json',
+        success: successCallback,
+        error: errorCallback
+    });
+
+
+
+
+    var owl = $('.owl-carousel');
     owl.owlCarousel({
         items: 1,
         loop: true,
@@ -134,7 +110,11 @@ $(document).ready(function () {
         owl.trigger('stop.owl.autoplay')
     })
   $(".owl-carousel").owlCarousel(); // initialize OWL*/
-    /*
+    
+});
+
+
+  /*
 
     //Delete Customers
     function deletebuttonsOnTable() {

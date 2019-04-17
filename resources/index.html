@@ -29,14 +29,32 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+	<style>
+		.container-fluid{
+			padding:0;
+		}
+		.logo{
+			max-width: 100px;
+		}
+		.space{
+			margin-top:3%;
+		}
+		.padding-right{
+			padding-right:0px;
+		}
+		.cem{
+			width: 100%;
+		}
+		</style>
 	<title>You've got a friend in me</title>
 
 </head>
 
 <body>
 	<!-- NAV BAR -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">You've got a friend in me</a>
+	
+	<nav class="navbar navbar-expand-lg navbar-light  ">
+		<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 		 aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -72,12 +90,14 @@
 							<div class="card-signin">
 								<form class="form-signin" method="post" id="form-signin">
 									<div class="form-label-group control-group">
-										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+										 autofocus>
 										<label for="inputEmail"></label>
 									</div>
 
 									<div class="form-label-group control-group">
-										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+										 required>
 										<label for="inputPassword"></label>
 									</div>
 
@@ -98,19 +118,173 @@
 		</div>
 	</div>
 
-	<!-- SET UP THE 3 PICS 
-	<div class="owl-carousel">
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
-		</div>
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
-		</div>
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
-		</div>
+	<!-- SET UP THE 3 PICS -->
+	<div class="container-fluid">
+	
+
+			<div class="col-12 offset-md-4 col-md-8 padding-right">
+				<img class="cem" src="img/carroussel_image4.png" />
+			</div>
+
+			<div class="col-12 space">
+
+					<h3 class="text-center">This is the second phrase</h3>
+
+			</div>
+
+			<div class="col-12 offset-md-3 col-md-6 space">
+					<img class="img-fluid" src="img/carroussel_image3.png" />
+				</div>
+	
+
 	</div>
--->
+
+
+    <div class="container space">
+			<div class="row">
+				<div class="col-12 col-md-3">
+					<div class="dropdown d-block d-md-none">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">
+							Categories
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<div data-link="index" class="active">Home</div>
+							<div data-link="classictoys/">Classic Toys</div>
+							<div data-link="electronics">Electronics</div>
+							<div data-link="boardgames">Board Games</div>
+							<div data-link="handmade">Handmade</div>
+						</div>
+					</div>
+					<div class="w-25 p-3 vertical-menu d-none d-md-block">
+						<div data-link="index" class="active">Home</div>
+						<div data-link="classictoys/">Classic Toys</div>
+						<div data-link="electronics">Electronics</div>
+						<div data-link="boardgames">Board Games</div>
+						<div data-link="handmade">Handmade</div>
+					</div>
+				</div>
+				<!-- Toys -->
+				<div class="col-12 col-md-9 pr-md-3">
+					<div class="row">
+	
+						<!-- Card deck -->
+						<div class="card-deck">
+	
+							<!-- Card -->
+							<div class="card mb-4">
+	
+								<!--Card image-->
+								<div class="view overlay">
+									<img class="card-img-top" src="https://images.pexels.com/photos/1040626/pexels-photo-1040626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+										alt="Card image cap">
+									<a href="#!">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+	
+								<!--Card content-->
+								<div class="card-body">
+	
+									<!--Title-->
+									<h4 class="card-title">Card title</h4>
+									<!--Text-->
+									<p class="card-text">Some quick example text to build on the card title and make up the
+										bulk of the card's content.</p>
+									<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+									<button type="button" class="btn btn-light-blue btn-md">Read more</button>
+	
+								</div>
+	
+							</div>
+							<!-- Card -->
+	
+							<!-- Card -->
+							<div class="card mb-4">
+	
+								<!--Card image-->
+								<div class="view overlay">
+									<img class="card-img-top" src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+										alt="Card image cap">
+									<a href="#!">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+	
+								<!--Card content-->
+								<div class="card-body">
+	
+									<!--Title-->
+									<h4 class="card-title">Card title</h4>
+									<!--Text-->
+									<p class="card-text">Some quick example text to build on the card title and make up the
+										bulk of the card's content.</p>
+									<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+									<button type="button" class="btn btn-light-blue btn-md">Read more</button>
+	
+								</div>
+	
+							</div>
+							<!-- Card -->
+	
+							<div class="card mb-4">
+	
+									<!--Card image-->
+									<div class="view overlay">
+										<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg"
+											alt="Card image cap">
+										<a href="#!">
+											<div class="mask rgba-white-slight"></div>
+										</a>
+									</div>
+		
+									<!--Card content-->
+									<div class="card-body">
+		
+										<!--Title-->
+										<h4 class="card-title">Card title</h4>
+										<!--Text-->
+										<p class="card-text">Some quick example text to build on the card title and make up the
+											bulk of the card's content.</p>
+										<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+										<button type="button" class="btn btn-light-blue btn-md">Read more</button>
+		
+									</div>
+		
+								</div>
+	
+							<!-- Card -->
+							<div class="card mb-4">
+	
+								<!--Card image-->
+								<div class="view overlay">
+									<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg"
+										alt="Card image cap">
+									<a href="#!">
+										<div class="mask rgba-white-slight"></div>
+									</a>
+								</div>
+	
+								<!--Card content-->
+								<div class="card-body">
+	
+									<!--Title-->
+									<h4 class="card-title">Card title</h4>
+									<!--Text-->
+									<p class="card-text">Some quick example text to build on the card title and make up the
+										bulk of the card's content.</p>
+									<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+									<button type="button" class="btn btn-light-blue btn-md">Read more</button>
+	
+								</div>
+	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
