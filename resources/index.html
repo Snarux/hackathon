@@ -23,7 +23,7 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	 crossorigin="anonymous">
-
+	 <link href="https://fonts.googleapis.com/css?family=Karla:400,700i" rel="stylesheet">
 
 	<!-- OWL -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -51,6 +51,33 @@
 		.footer{
 			background-color:#fbfbfb;
 		}
+		.imagehover{position: absolute; margin-top:-50%;
+		font-size:800%;}
+
+		.compensate{
+			margin-top:50px;
+		}
+
+@media only screen and (min-width: 600px) {
+	.centered {
+			font-weight: 900;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  text-transform: uppercase;
+  transform: translate(0%, 120%);
+  font-size:6vw;
+  font-family: 'Karla', sans-serif;
+  font-weight:700;
+	font-style: italic;
+  z-index:9999;
+}
+}
+
+
+
+
+
 
 		</style>
 	<title>You've got a friend in me</title>
@@ -126,8 +153,13 @@
 	</div>
 
 	<!-- SET UP THE 3 PICS -->
-	<div class="container-fluid">
+	<div class="container-fluid compensate">
 
+			<h1 class="centered d-none d-md-block">You’ve got <br>a friend in me.</h1>
+
+		<div class="col-12 offset-md-4 col-md-8  d-block d-sm-none">
+					<p>You’ve got <br>a friend in me.</p>
+		</div>
 
 		<div class="col-12 offset-md-4 col-md-8 padding-right">
 			<img class="cem" src="img/carroussel_image4.png" />
