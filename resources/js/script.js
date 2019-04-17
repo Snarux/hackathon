@@ -1,23 +1,64 @@
-window.onload = function () {
+$(document).ready(function () {
 
-  
-    var owl = $('.owl-carousel');
-    owl.owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplayHoverPause: true
-    });
-    $('.play').on('click', function () {
-        owl.trigger('play.owl.autoplay', [1000])
-    })
-    $('.stop').on('click', function () {
-        owl.trigger('stop.owl.autoplay')
-    })
-  $(".owl-carousel").owlCarousel(); // initialize OWL
-    /*
+    // Below function Executes on click of login button.
+    var users = [{ "name": "admin", "password":"admin"}, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
+    var attempt = 3; // Variable to count number of attempts.
+    $("#submit").on("click", function () {
+        var username = document.getElementById("inputEmail").value;
+        var password = document.getElementById("inputPassword").value;
+
+        Object.entries(users).forEach(usr => {
+
+            if(username == usr[1].name){
+
+                if (password == usr[1].password) {
+                    alert("Login successfully");
+                    window.location = "success.html"; // Redirecting to other page.
+                    return false;
+                }
+                
+                else {
+                    attempt--;// Decrementing by one.
+                    alert("You have left " + attempt + " attempt;");
+                    // Disabling fields after 3 attempts.
+                    if (attempt == 0) {
+                        document.getElementById("inputEmail").disabled = true;
+                        document.getElementById("inputPassword").disabled = true;
+                        document.getElementById("submit").disabled = true;
+                        return false;
+                    }
+                }
+
+            }
+        });
+    }
+
+    );
+
+    //Validate form
+    valid();
+    function valid() {
+        $("#form-signin").validate({
+            rules: {
+                name: {
+                    minlength: 2,
+                    required: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            highlight: function (element) {
+                $(element).closest(".control-group").removeClass("success").addClass("error");
+            },
+            success: function (element) {
+                element.text("OK!").addClass("valid")
+                    .closest(".control-group").removeClass("error").addClass("success");
+            }
+        });
+    };
+    
     makeTable();
     function makeTable() {
         //reset table
@@ -25,7 +66,6 @@ window.onload = function () {
 
         //ajax
         function successCallback(incomingData) {
-
 
             //header 
             $('#table').append("<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Email</th><th>Phone</th><th>Edit</th><th>Delete</th></tr>");
@@ -60,7 +100,6 @@ window.onload = function () {
 
         };
 
-
         function errorCallback(request, status, error) {
             // do something with the error
             console.log("fail");
@@ -77,6 +116,25 @@ window.onload = function () {
 
         var table = document.getElementById("table"); //Change Me
     }
+});
+
+    /*var owl = $('.owl-carousel');
+    owl.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true
+    });
+    $('.play').on('click', function () {
+        owl.trigger('play.owl.autoplay', [1000])
+    })
+    $('.stop').on('click', function () {
+        owl.trigger('stop.owl.autoplay')
+    })
+  $(".owl-carousel").owlCarousel(); // initialize OWL*/
+    /*
 
     //Delete Customers
     function deletebuttonsOnTable() {
@@ -178,4 +236,4 @@ window.onload = function () {
         });
     }
 */
-} //.onload
+ //.onload

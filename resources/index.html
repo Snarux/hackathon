@@ -24,6 +24,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	 crossorigin="anonymous">
 
+
 	<!-- OWL -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -69,14 +70,14 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card-signin">
-								<form class="form-signin">
-									<div class="form-label-group">
-										<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+								<form class="form-signin" method="post" id="form-signin">
+									<div class="form-label-group control-group">
+										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
 										<label for="inputEmail"></label>
 									</div>
 
-									<div class="form-label-group">
-										<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<div class="form-label-group control-group">
+										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 										<label for="inputPassword"></label>
 									</div>
 
@@ -91,14 +92,13 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Log in</button>
+					<button type="button" class="btn btn-primary btn-login" id="submit">Log in</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- CAROUSEL -->
-	<!-- Set up your HTML -->
+	<!-- SET UP THE 3 PICS 
 	<div class="owl-carousel">
 		<div class="item">
 			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
@@ -110,6 +110,7 @@
 			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
 		</div>
 	</div>
+-->
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -120,6 +121,7 @@
 	 crossorigin="anonymous"></script>
 	<script src="js/script.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
 
 </body>
 
