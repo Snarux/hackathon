@@ -1,16 +1,14 @@
 $(document).ready(function () {
 
-//anchor STORE
-function scrollToAnchor(aid){
-    var aTag = $("#"+aid);
-    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-}
+    //anchor STORE
+    function scrollToAnchor(aid) {
+        var aTag = $("#" + aid);
+        $('html,body').animate({ scrollTop: aTag.offset().top }, 'slow');
+    }
 
-$("#astore").click(function() {
-   scrollToAnchor('store');
-});
-
-
+    $("#astore").click(function () {
+        scrollToAnchor('store');
+    });
 
     // Below function Executes on click of login button.
     var users = [{ "name": "admin", "password": "admin" }, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
@@ -25,7 +23,7 @@ $("#astore").click(function() {
 
                 if (password == usr[1].password) {
                     alert("Login successfully");
-                    window.location = "success.html"; // Redirecting to other page.
+                    window.location = "index.html"; // Redirecting to other page.
                     return false;
                 }
 
@@ -79,9 +77,9 @@ $("#astore").click(function() {
         //ajax
         function successCallback(incomingData) {
 
-        //populate
+            //populate
             for (i = 0; i < incomingData.length; i++) {
-                
+
                 Object.entries(incomingData[i]).forEach(entry => {
                     $('#products').append('<div class="card"><p class="card-toy-category">Category</p><img class="img-fluid card-img-top" src="" alt="Card image cap"><div class="card-body"><p class="card-toy-name">Name</p><p class="card-toy-type">Type</p></div></div>');
                 });
@@ -121,8 +119,8 @@ $("#astore").click(function() {
     $('.stop').on('click', function () {
         owl.trigger('stop.owl.autoplay')
     })
-  $(".owl-carousel").owlCarousel(); // initialize OWL*/
-    
+    $(".owl-carousel").owlCarousel(); // initialize OWL*/
+
 });
 
 

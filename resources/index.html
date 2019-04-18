@@ -47,7 +47,7 @@
 		}
 		.fixed-top{
 			background-color: white;
-			z-index: 9999;
+			z-index: 9991;
 		}
 		.footer{
 			background-color:#fbfbfb;
@@ -58,6 +58,9 @@
 		.compensate{
 			margin-top:50px;
 		}
+
+		.modal{z-index:9999}
+		.modal-dialog{margin-top:10%;}
 
 @media only screen and (min-width: 600px) {
 	.centered {
@@ -96,12 +99,6 @@
   text-align: right;
 }
 }
-
-
-
-
-
-
 		</style>
 	<title>You've got a friend in me</title>
 
@@ -118,11 +115,19 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
+				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+					<a class="nav-link" href="#">About</a>
 				</li>
+				<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+				 aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							ABOUT US...
+						</div>
+					</div>
+				</div>
 				<li class="nav-item">
-					<a class="nav-link" id="astore" href="#" >Store</a>
+					<a class="nav-link" id="astore" href="#">Store</a>
 				</li>
 				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
 					<a class="nav-link" href="#">Login</a>
@@ -202,7 +207,7 @@
 		</div>
 
 		<div class="col-12">
-		<hr class="space" id="store">	
+			<hr class="space" id="store">
 		</div>
 
 	</div>
@@ -358,20 +363,9 @@
 	<!-- Footer -->
 
 	<div class="navbar navbar-expand-lg navbar-light  footer">
-
-		<div class=" mx-auto">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
-				</li>
-				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
-					<a class="nav-link" href="#">Login</a>
-				</li>
-			</ul>
-		</div>
+		<p class="text-center">
+			® All rights reserved.
+		</p>
 	</div>
 
 
