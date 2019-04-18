@@ -29,6 +29,9 @@
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+	<!-- FONT -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
 	<style>
 		.container-fluid{
 			padding:0;
@@ -42,7 +45,7 @@
 		.padding-right{
 			padding-right:0px;
 		}
-		.cem{
+		.first-image{
 			width: 100%;
 		}
 		.fixed-top{
@@ -59,8 +62,16 @@
 			margin-top:50px;
 		}
 
-		.modal{z-index:9999}
+		.modal{z-index:9992}
 		.modal-dialog{margin-top:10%;}
+		.modal-content,.modal-header, .modal-footer {
+			border: 1px solid rgba(255, 196, 0, 0.342);
+			border-radius: 3px;
+		}
+
+		.error{color:red;}
+		.valid{color:green !important;}
+		input{   border: 1px solid rgb(255, 196, 0.5) !important;}
 
 @media only screen and (min-width: 600px) {
 	.centered {
@@ -99,44 +110,92 @@
   text-align: right;
 }
 }
+
+.alert-success{z-index:99999}
+
+.cem{ max-width: 100%; max-height:200px; }
 		</style>
 	<title>You've got a friend in me</title>
 
 </head>
 
 <body>
-	<!-- NAV BAR -->
 
+
+
+	<!-- NAV BAR -->
 	<nav class="navbar navbar-expand-lg navbar-light  fixed-top">
-		<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"> </a>
+		<a class="navbar-brand" href="#"><img id="logo" class="logo" src="img/logo.png"> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 		 aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav ml-auto">
-				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
+				<li class="nav-item" data-toggle="modal" data-target="#largeExampleModal">
 					<a class="nav-link" href="#">About</a>
 				</li>
-				<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-				 aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-							ABOUT US...
-						</div>
-					</div>
-				</div>
 				<li class="nav-item">
 					<a class="nav-link" id="astore" href="#">Store</a>
 				</li>
-				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
-					<a class="nav-link" href="#">Login</a>
+				<li class="nav-item username-nav" data-toggle="modal" data-target="#exampleModal">
+					<a class="nav-link" href="#">Login </a>
+				</li>
+				<li class="nav-item " data-toggle="modal" data-target="#cartModal" id="shopping" style="display:none;">
+					<a href="#" class="nav-link"><span></span><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a>
 				</li>
 			</ul>
 		</div>
+		<!-- Toast -->
+
 	</nav>
 
-	<!-- Modal -->
+	<!-- Modals -->
+
+	<!-- ABOUT US -->
+	<div class="modal fade bd-example-modal-lg" id="largeExampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+	 aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">About our company</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							Since the dawn of time, whenever mankind stumbled upon something uknown, two questions popped in our minds. "Can
+							we eat it?" was the first and if the answer was "No" there would come the second one: "Can we use it for sex?"
+							<br>
+
+							Now that we live in a time when people are actively encouraged to explore their sexuality, our mission, nay, our
+							drive, is to help you address your urges in an healthy and safe way. <br>
+
+							Its generally accepted that Disney is a synonym of a good childhood and if you got here by your own, most likely
+							you had a crush or an admiration for one or more of its characters. Maybe when you became aware that there was
+							more to it than just peeing or maybe when you were watching a cartoon with your kids and you realized that
+							"woody" and "buzz" are more than an unlikely duo. Honestly, we dont care. And we dont judge. Thats not our job
+							here. Our job is to help you help yourself and, who knows, your relationship. You might just want to fulfill
+							that hole inside you where your childhood used to be or just have a laugh with your parthner after the flame of
+							the youth is gone or even just share a laugh with someone special. When the road looks rough ahead and you're
+							miles and miles from your nice warm bed
+							You just remember what your old pals said. You've got a friend in us.
+							<br>
+							All our products are made from recycled materials and following responsible economic practices. No children nor
+							animal labour was involved in the process chain.
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- LOG IN -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -157,7 +216,7 @@
 										<label for="inputEmail"></label>
 									</div>
 
-									<div class="form-label-group control-group">
+									<div class="form-label-group ">
 										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
 										 required>
 										<label for="inputPassword"></label>
@@ -173,24 +232,75 @@
 					</div>
 				</div>
 				<div class="modal-footer">
+					<!-- registerModal -->
+					<button type="button" class="btn btn-dark" data-dismiss="modal" id="btnRegisterModal">Don't have an account?
+						Register</button>
+					<button type="button" class="btn btn-warning btn-login" id="login-submit">Log in</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Register -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Register</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card-signin">
+								<form class="form-register" method="post" id="form-register">
+
+									<div class="form-label-group control-group">
+										<input name="firstName" type="firstName" id="inputFirstName" class="form-control" placeholder="First name"
+										 required autofocus>
+										<label for="inputFirstName"></label>
+									</div>
+
+									<div class="form-label-group control-group">
+										<input name="lastName" type="lastName" id="inputLastName" class="form-control" placeholder="Last name"
+										 required autofocus>
+										<label for="inputLastName"></label>
+									</div>
+
+									<div class="form-label-group control-group">
+										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+										 autofocus>
+										<label for="inputEmail"></label>
+									</div>
+
+									<div class="form-label-group ">
+										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+										 required>
+										<label for="inputPassword"></label>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary btn-login" id="submit">Log in</button>
+					<button type="button" class="btn btn-warning btn-login" id="register-submit">Register</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<!-- SET UP THE 3 PICS -->
-	<div class="container-fluid compensate">
+	<div id="top" class="container-fluid compensate">
 
 		<h1 class="centered d-none d-md-block">You’ve got <br>a friend in me.</h1>
 
-		<!-- <div class="col-12 offset-md-4 col-md-8 d-block d-sm-none">
-			<p>You’ve got <br>a friend in me.</p>
-		</div> -->
-
 		<div class="col-12 offset-md-4 col-md-8 padding-right">
-			<img class="cem" src="img/carroussel_image4.png" />
+			<img class="first-image" src="img/carroussel_image4.png" />
 		</div>
 
 		<div class="col-12 col-md-10 offset-md-1 space">
@@ -209,156 +319,83 @@
 		<div class="col-12">
 			<hr class="space" id="store">
 		</div>
-
 	</div>
 
-
-	<div class="container-fluid space">
+	<!-- Store -->
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-12 col-md-10 offset-md-1">
-				<div class="row">
-					<div class="col-12 col-md-3">
-						<div class="dropdown d-block d-md-none">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-							 aria-haspopup="true" aria-expanded="false">
-								Categories
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<div data-link="index" class="active">Home</div>
-								<div data-link="classictoys/">Classic Toys</div>
-								<div data-link="electronics">Electronics</div>
-								<div data-link="boardgames">Board Games</div>
-								<div data-link="handmade">Handmade</div>
-							</div>
-						</div>
-						<div class="vertical-menu d-none d-md-block">
-							<div data-link="index" class="active">Home</div>
-							<div data-link="classictoys/">Classic Toys</div>
-							<div data-link="electronics">Electronics</div>
-							<div data-link="boardgames">Board Games</div>
-							<div data-link="handmade">Handmade</div>
-						</div>
+			<div class="col-12 col-md-3">
+				<div class="dropdown d-block d-md-none">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+					 aria-haspopup="true" aria-expanded="false">
+						Categories
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<div data-link="index" class="active">Home</div>
+						<div data-link="classictoys/">Classic Toys</div>
+						<div data-link="electronics">Electronics</div>
+						<div data-link="boardgames">Board Games</div>
+						<div data-link="handmade">Handmade</div>
 					</div>
-					<!-- Toys -->
-					<div class="col-12 col-md-9 pr-md-3">
-						<div class="row">
+				</div>
+				<div class="w-25 p-3 vertical-menu d-none d-md-block">
+					<div data-link="index" class="active">Home</div>
+					<div data-link="classictoys/">Classic Toys</div>
+					<div data-link="electronics">Electronics</div>
+					<div data-link="boardgames">Board Games</div>
+					<div data-link="handmade">Handmade</div>
+				</div>
+			</div>
+			<!-- Toys -->
+			<div class="col-md-9 pr-md-3">
 
-							<!-- Card deck -->
-							<div class="card-deck">
+				<!-- Card deck -->
+				<div id="card-deck" class="row">
 
-								<!-- Card -->
-								<div class="card mb-4">
-
-									<!--Card image-->
-									<div class="view overlay">
-										<img class="card-img-top" src="https://images.pexels.com/photos/1040626/pexels-photo-1040626.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-										 alt="Card image cap">
-										<a href="#!">
-											<div class="mask rgba-white-slight"></div>
-										</a>
-									</div>
-
-									<!--Card content-->
-									<div class="card-body">
-
-										<!--Title-->
-										<h4 class="card-title">Card title</h4>
-										<!--Text-->
-										<p class="card-text">Some quick example text to build on the card title and make up the
-											bulk of the card's content.</p>
-										<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-										<button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-									</div>
-
-								</div>
-								<!-- Card -->
-
-								<!-- Card -->
-								<div class="card mb-4">
-
-									<!--Card image-->
-									<div class="view overlay">
-										<img class="card-img-top" src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-										 alt="Card image cap">
-										<a href="#!">
-											<div class="mask rgba-white-slight"></div>
-										</a>
-									</div>
-
-									<!--Card content-->
-									<div class="card-body">
-
-										<!--Title-->
-										<h4 class="card-title">Card title</h4>
-										<!--Text-->
-										<p class="card-text">Some quick example text to build on the card title and make up the
-											bulk of the card's content.</p>
-										<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-										<button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-									</div>
-
-								</div>
-								<!-- Card -->
-
-								<div class="card mb-4">
-
-									<!--Card image-->
-									<div class="view overlay">
-										<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/14.jpg" alt="Card image cap">
-										<a href="#!">
-											<div class="mask rgba-white-slight"></div>
-										</a>
-									</div>
-
-									<!--Card content-->
-									<div class="card-body">
-
-										<!--Title-->
-										<h4 class="card-title">Card title</h4>
-										<!--Text-->
-										<p class="card-text">Some quick example text to build on the card title and make up the
-											bulk of the card's content.</p>
-										<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-										<button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-									</div>
-
-								</div>
-
-								<!-- Card -->
-								<div class="card mb-4">
-
-									<!--Card image-->
-									<div class="view overlay">
-										<img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/15.jpg" alt="Card image cap">
-										<a href="#!">
-											<div class="mask rgba-white-slight"></div>
-										</a>
-									</div>
-
-									<!--Card content-->
-									<div class="card-body">
-
-										<!--Title-->
-										<h4 class="card-title">Card title</h4>
-										<!--Text-->
-										<p class="card-text">Some quick example text to build on the card title and make up the
-											bulk of the card's content.</p>
-										<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-										<button type="button" class="btn btn-light-blue btn-md">Read more</button>
-
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<!-- Modal here -->
+	<div class="modal fade" id="modalProd" tabindex="-1" role="dialog" aria-labelledby="testModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="rcard-title"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- Card -->
+
+					<!--Card image-->
+					<div class="view overlay">
+						<img id="rcard-img-top" class="card-img-top" src="" alt="Card image cap">
+						<a href="#!">
+							<div class="mask rgba-white-slight"></div>
+						</a>
+					</div>
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<!--Title-->
+						<h6 class="card-title" id="rcard-text"></h6>
+						<!--Text-->
+						<p class="card-text" id="rcard-category"></p>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .Store -->
 
 	<!-- Footer -->
 
@@ -376,9 +413,12 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	 crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
+
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+
+	<script src="js/script.js"></script>
+	<script src="js/app.js"></script>
 
 </body>
 

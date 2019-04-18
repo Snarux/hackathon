@@ -1,19 +1,25 @@
 $(document).ready(function () {
 
-    //anchor STORE
     function scrollToAnchor(aid) {
         var aTag = $("#" + aid);
         $('html,body').animate({ scrollTop: aTag.offset().top }, 'slow');
     }
 
+    //anchor STORE
+
     $("#astore").click(function () {
         scrollToAnchor('store');
     });
 
+    //anchor LOGO
+    $("#logo").click(function () {
+        scrollToAnchor('top');
+    });
+
     // Below function Executes on click of login button.
-    var users = [{ "name": "admin", "password": "admin" }, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
+    var users = [{ "name": "admin", "password": "admin" }, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "Joao" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
     var attempt = 3; // Variable to count number of attempts.
-    $("#submit").on("click", function () {
+    $("#login-submit").on("click", function () {
         var username = document.getElementById("inputEmail").value;
         var password = document.getElementById("inputPassword").value;
 
@@ -23,7 +29,12 @@ $(document).ready(function () {
 
                 if (password == usr[1].password) {
                     alert("Login successfully");
-                    window.location = "index.html"; // Redirecting to other page.
+                    //window.location = "index.html"; // Redirecting to other page.
+                    $("#exampleModal").modal("hide");
+                    $(".username-nav .nav-link").text(username);
+                    $("#shopping").show();
+                    $(".alert").show();
+                    $(".alert-text").text("Welcome: " + username);
                     return false;
                 }
 
@@ -34,26 +45,19 @@ $(document).ready(function () {
                     if (attempt == 0) {
                         document.getElementById("inputEmail").disabled = true;
                         document.getElementById("inputPassword").disabled = true;
-                        document.getElementById("submit").disabled = true;
+                        document.getElementById("login-submit").disabled = true;
                         return false;
                     }
                 }
-
             }
         });
-    }
-
-    );
+    });
 
     //Validate form
     valid();
     function valid() {
         $("#form-signin").validate({
             rules: {
-                name: {
-                    minlength: 2,
-                    required: true
-                },
                 email: {
                     required: true,
                     email: true
@@ -69,6 +73,26 @@ $(document).ready(function () {
         });
     };
 
+    //This is a btn to open a Register MOdal
+    $("#btnRegisterModal").click(function () {
+        $("#registerModal").modal("show");
+    });
+
+    // Persist new user
+    $("#register-submit").on("click", function () {
+        
+        console.log($('#inputEmail').val());
+        console.log($('#inputPassword').val());
+
+        users.push({
+            "name": "" + $('#inputEmail').val(),
+            "password": "" + $('#inputPassword').val() })
+        console.log(users);
+        //return users;
+    });
+});
+
+/*
     makeTable();
     function makeTable() {
         //reset table
@@ -119,12 +143,12 @@ $(document).ready(function () {
     $('.stop').on('click', function () {
         owl.trigger('stop.owl.autoplay')
     })
-    $(".owl-carousel").owlCarousel(); // initialize OWL*/
+    $(".owl-carousel").owlCarousel(); // initialize OWL 
 
 });
 
 
-  /*
+   
 
     //Delete Customers
     function deletebuttonsOnTable() {
