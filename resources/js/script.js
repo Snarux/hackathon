@@ -35,6 +35,8 @@ $(document).ready(function () {
                     $("#shopping").show();
                     $(".alert").show();
                     $(".alert-text").text("Welcome: " + username);
+
+                    alert(users);
                     return false;
                 }
 
