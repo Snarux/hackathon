@@ -1,5 +1,17 @@
 $(document).ready(function () {
 
+//anchor STORE
+function scrollToAnchor(aid){
+    var aTag = $("#"+aid);
+    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+}
+
+$("#astore").click(function() {
+   scrollToAnchor('store');
+});
+
+
+
     // Below function Executes on click of login button.
     var users = [{ "name": "admin", "password": "admin" }, { "name": "Rui@mail.com", "password": "Ru1" }, { "name": "Sara@mail.com", "password": "S4ra" }, { "name": "Joao@mail.com", "password": "JoÃ£o" }, { "name": "Lara@mail.com", "password": "L4ra" }, { "name": "Ramos@mail.com", "password": "R4mos" }];
     var attempt = 3; // Variable to count number of attempts.
