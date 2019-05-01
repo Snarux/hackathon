@@ -3,13 +3,17 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <name> 
+    Joao Dias
+    Lara Margarida
+    Miguel Ramos
+    Rui Dias
+	Sara Lopes	
 
 # THANKS
 
-    <name>
+    Academia de Codigo
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    CSS3, HTML5, Javascript, Java

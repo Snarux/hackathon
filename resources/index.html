@@ -23,43 +23,135 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	 crossorigin="anonymous">
-
+	<link href="https://fonts.googleapis.com/css?family=Karla:400,700i" rel="stylesheet">
 
 	<!-- OWL -->
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- FONT -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/css.css">
 
 	<title>You've got a friend in me</title>
 
 </head>
 
 <body>
+
+
+
 	<!-- NAV BAR -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">You've got a friend in me</a>
+	<nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+		<a class="navbar-brand" href="#"><img id="logo" class="logo" src="img/logo.png"> </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
 		 aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="#">About us <span class="sr-only">(current)</span></a>
+			<ul class="navbar-nav ml-auto username-here">
+				<li class="nav-item" data-toggle="modal" data-target="#largeExampleModal">
+					<a class="nav-link" href="#">About</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
+					<a class="nav-link" id="astore" href="#">Store</a>
 				</li>
-				<li class="nav-item" data-toggle="modal" data-target="#exampleModal">
-					<a class="nav-link" href="#">Login</a>
+				<li class="nav-item username-nav" data-toggle="modal" data-target="#exampleModal">
+					<a class="nav-link" href="#">Login </a>
+				</li>
+				<li class="nav-item " data-toggle="modal" data-target="#cartModal" id="shopping" style="display:none;">
+					<a href="#" class="nav-link"><span class="shopping-mail"></span><i class="fa fa-shopping-cart" aria-hidden="true"></i> </a>
 				</li>
 			</ul>
 		</div>
+		<!-- Toast -->
+
 	</nav>
 
-	<!-- Modal -->
+	<!-- Modals -->
+
+		<!-- Current User -->
+		<div class="modal fade bd-example-modal-lg" id="cartModal" tabindex="-1" role="dialog" aria-hidden="true">
+		   <div class="modal-dialog modal-lg">
+			   <div class="modal-content ">
+				   <div class="modal-header perfil">
+					   
+	
+				   </div>
+				   <div class="modal-body">
+					   <div class="row">
+						   <div class="col-sm-12 ">
+								
+						   </div>
+						   <div class="col-sm-12">
+							   <table class=" cart-table table table-striped ">
+
+								</table>
+
+							</div>
+					   </div>
+				   </div>
+				   <div class="modal-footer">
+
+						<div class=" text-left">
+
+						</div>
+					   <button type="button" class="btn btn-warning btn-login cart-price" id="logout">Logout</button>
+					   <button type="button" class="btn btn btn-dark" data-dismiss="modal">Close</button>
+				   </div>
+			   </div>
+		   </div>
+	   </div>
+
+	<!-- ABOUT US -->
+	<div class="modal fade bd-example-modal-lg" id="largeExampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+	 aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">About our company</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							Since the dawn of time, whenever mankind stumbled upon something unknown, two questions popped into our minds. "Can
+							we eat it?" was the first, and if the answer was "No" there would come the second one: "Can we use it for sex?"
+							<br><br>
+
+							Now that we live in a time when people are actively encouraged to explore their sexuality, our mission, nay, our
+							drive, is to help you address your urges in an healthy and safe way. <br><br>
+
+							It is generally accepted that Disney is a synonym of a good childhood and if you got here by your own, most likely
+							you had a crush or an admiration for one or more of its characters. Maybe when you became aware that there was
+							more to it than just peeing or maybe when you were watching a cartoon with your kids and you realized that
+							Woody and Buzz are more than an unlikely duo. Honestly, we don't care. And we don't judge. That's not our job
+							here. Our job is to help you help yourself and, who knows, your relationship. You might just want to fulfill
+							that hole inside you where your childhood used to be, or just have a laugh with your parthner after the flame of
+							the youth is gone, or even just share a laugh with someone special.
+							When the road looks rough ahead and you're
+							miles and miles from your nice warm bed, just remember what your old pals said. You've got a friend in us.
+							<br><br>
+							All our products are made from recycled materials and following responsible economic practices. No child nor
+							animal labour were involved in the process chain.
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- LOG IN -->
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
-			<div class="modal-content">
+			<div class="modal-content modal-red">
 				<div class="modal-header">
 					<h5 class="modal-title" id="exampleModalLabel">Log in</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -72,12 +164,14 @@
 							<div class="card-signin">
 								<form class="form-signin" method="post" id="form-signin">
 									<div class="form-label-group control-group">
-										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+										<input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+										 autofocus>
 										<label for="inputEmail"></label>
 									</div>
 
-									<div class="form-label-group control-group">
-										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+									<div class="form-label-group ">
+										<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password"
+										 required>
 										<label for="inputPassword"></label>
 									</div>
 
@@ -91,26 +185,179 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary btn-login" id="submit">Log in</button>
+					<!-- registerModal -->
+					<button type="button" class="btn btn-dark" data-dismiss="modal" id="btnRegisterModal">Don't have an account?
+						Register</button>
+					<button type="button" class="btn btn-warning btn-login" id="login-submit">Log in</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- SET UP THE 3 PICS 
-	<div class="owl-carousel">
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
-		</div>
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
-		</div>
-		<div class="item">
-			<img src="https://www.awn.com/sites/default/files/styles/original/public/image/attached/1048290-tstory4-1280.jpg?itok=Le5Zd3XR" />
+	<!-- Register -->
+	<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Register</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card-signin">
+								<form class="form-register" method="post" id="form-register">
+
+									<div class="form-label-group control-group">
+										<input name="inputFirstNameR" type="firstName" id="inputFirstNameR" class="form-control" placeholder="First name" required autofocus>
+										<label for="inputFirstName"></label>
+									</div>
+
+									<div class="form-label-group control-group">
+										<input name="inputLastNameR" type="lastName" id="inputLastNameR" class="form-control" placeholder="Last name" required autofocus>
+										<label for="inputLastName"></label>
+									</div>
+
+									<div class="form-label-group control-group">
+										<input name="inputEmailR" type="email" id="inputEmailR" class="form-control" placeholder="Email address" required
+										 autofocus>
+										<label for="inputEmail"></label>
+									</div>
+
+									<div class="form-label-group ">
+										<input type="password" name="passwordR" id="inputPasswordR" class="form-control" placeholder="Password" required>
+										<label for="inputPassword"></label>
+									</div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-warning btn-login" id="register-submit">Register</button>
+				</div>
+			</div>
 		</div>
 	</div>
--->
+
+	<!-- SET UP THE 3 PICS -->
+	<div id="top" class="container-fluid compensate">
+
+		<h1 class="centered d-none d-md-block">You’ve got <br>a friend in me.</h1>
+
+		<div class="col-12 offset-md-4 col-md-8 padding-right">
+			<img class="first-image" src="img/carroussel_image4.png" />
+		</div>
+
+		<div class="col-12 col-md-10 offset-md-1 space">
+
+			<h3 class="text-center italic">Other toys might be
+				bigger and stronger too,
+				but none love you
+				more than I do.</h3>
+
+		</div>
+
+		<div class="col-12 offset-md-3 col-md-6 space">
+			<img class="img-fluid" src="img/familia.png" />
+		</div>
+
+		<div class="col-12">
+			<hr class="space" id="store">
+		</div>
+	</div>
+
+	<!-- Store -->
+	<div class="container-fluid">
+		<div class="row" style="min-height: 100%;">
+			<div class="col-12 col-md-2 space" id="" data-toggle="menu" data-target="#menuCategory">
+				<div class="dropdown d-block d-md-none col-12 ">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Categories
+					</button>
+					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<div class="menuCategory" data-link="index" class="active">All</div>
+						<div class="menuCategory" data-link="Classic">Classic Toys</div>
+						<div class="menuCategory" data-link="Electronic">Electronic</div>
+						<div class="menuCategory" data-link="Board Game">Board Games</div>
+						<div class="menuCategory" data-link="Used">Used</div>
+					</div>
+				</div>
+				<div class="col-12 d-none d-md-block ">
+					<div class=" col-12" data-link="index" class="active"><h5>Filters:</h4></div>
+					<div class="menuCategory col-12" data-link="index" class="active"><h4>All</h4></div>
+					<div class="menuCategory col-12" data-link="Classic"><h4>Classic Toys</h4></div>
+					<div class="menuCategory col-12" data-link="Electronic"><h4>Electronic</h4></div>
+					<div class="menuCategory col-12" data-link="Board Game"><h4>Board Games</h4></div>
+					<div class="menuCategory col-12" data-link="Used"><h4>Used</h4></div>
+				</div>
+			</div>
+			<!-- Toys -->
+			<div class="col-md-10 ">
+
+				<!-- Card deck -->
+				<div id="card-deck" class="row">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal here -->
+	<div class="modal fade" id="modalProd" tabindex="-1" role="dialog" aria-labelledby="testModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="rcard-title"></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<!-- Card -->
+
+					<!--Card image-->
+					<div class="view overlay">
+						<img id="rcard-img-top" class="card-img-top" src="" alt="Card image cap">
+						<a href="#!">
+							<div class="mask rgba-white-slight"></div>
+						</a>
+					</div>
+
+					<!--Card content-->
+					<div class="card-body">
+
+						<!--Title-->
+						<h6 class="card-title" id="rcard-text"></h6>
+						<!--Text-->
+						<p class="card-text" id="rcard-category"></p>
+						<p id="rcard-price"></p>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" data-id="" data-price="" data-name="" data-url="" class="btn btn-warning buy-this rbuy-this">Add to cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- .Store -->
+
+	<!-- Footer -->
+
+	<div class="footer space text-center ">
+		<p class="text-center lightgrey">
+			® All rights reserved. || Endereço: Tv. de São Pedro 8, 1200-342 Lisboa || Telefone: 918 725 290
+		</p>
+	</div>
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -119,9 +366,13 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	 crossorigin="anonymous"></script>
-	<script src="js/script.js"></script>
+
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+
+	<script src="js/script.js"></script>
+	<script src="js/app.js"></script>
+	
 
 </body>
 

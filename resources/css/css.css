@@ -1,0 +1,108 @@
+	.buy-this:active{ background-color:#1755a2 !important; }
+	.italic{font-style: italic; font-family: 'Karla', sans-serif;}
+	.img-cart{max-width:20%;}
+		.lightgrey{color:lightgray}
+		.nopadding-left{padding-left:0;}
+		.card-title{margin-top:5px;}
+		.card-button{
+			cursor: pointer;
+		}
+		.menuCategory {
+			cursor: pointer;
+			font-size: 20px;
+			font-family: 'Karla', sans-serif;
+		}
+
+		.menuCategory:hover {
+			color: lightgrey;
+			cursor: pointer;
+			font-size: 20px;
+
+			font-family: 'Karla', sans-serif;
+		}
+		.container-fluid{
+			padding:0;
+		}
+		.logo{
+			max-width: 100px;
+		}
+		.space{
+			margin-top:5%;
+		}
+		.padding-right{
+			padding-right:0px;
+		}
+		.first-image{
+			width: 100%;
+		}
+		.fixed-top{
+			background-color: white;
+			z-index: 9991;
+		}
+		.footer p{
+			margin-bottom:0px;
+		}
+		.footer{
+			background-color:#fbfbfb;
+			padding:15px;
+			
+		}
+		.imagehover{position: absolute; margin-top:-50%;
+		font-size:800%;}
+
+		.compensate{
+			margin-top:50px;
+		}
+
+		.modal{z-index:9992}
+		.modal-dialog{margin-top:2%;}
+		.modal-content,.modal-header, .modal-footer {
+			border: 1px solid rgba(255, 196, 0, 0.342);
+			border-radius: 3px;
+		}
+
+		.error{color:red;}
+		.valid{color:green !important;}
+		input{   border: 1px solid rgb(255, 196, 0.5) !important;}
+
+@media only screen and (min-width: 600px) {
+	.centered {
+			font-weight: 900;
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  text-transform: uppercase;
+  transform: translate(0%, 120%);
+  font-size:6vw;
+  font-family: 'Karla', sans-serif;
+  font-weight:700;
+	font-style: italic;
+  z-index:9990;
+}
+}
+
+.uppercase {
+	text-transform: uppercase;
+	font-family: 'Karla', sans-serif;
+}
+
+@media only screen and (min-width: 600px) {
+	.centered2 {
+			font-weight: 900;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-transform: uppercase;
+  transform: translate(110%, 40%);
+  font-size:6vw;
+  font-family: 'Karla', sans-serif;
+  font-weight:700;
+	font-style: italic;
+  z-index:9990;
+  text-align: right;
+}
+}
+
+.alert-success{z-index:99999}
+
+.cem{ max-width: 100%; max-height:200px; }
